@@ -1,0 +1,20 @@
+# Source configuration
+version: 2
+
+sources:
+  - name: snow_sales
+    database: dbt_trial
+    schema: dbo_dbt
+    freshness: ## on schema level to check the freshness
+         warn_after:{ count: 24, period: hour}
+          error_after: { count: 1, period: day}
+    loaded_at_field: _etl_loaded_date
+    tables:
+      - name: customers
+        freshness: null
+      - name: orders
+        freshness: ## strict configurations
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 24, period: hour}
+        loaded_at_field: _etl_loaded_date
+      - name: lineitems

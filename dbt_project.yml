@@ -46,7 +46,7 @@ models:
   dbt_tutorial:
     ## applies the config to following models
     marts:
-      materialized: table
+      +materialized: table
     
     staging:
-      materialized: view
+      +materialized: view
