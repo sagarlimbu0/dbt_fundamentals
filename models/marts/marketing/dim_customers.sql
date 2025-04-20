@@ -1,12 +1,16 @@
 -- By defaut, when running the model it creates a VIEW
 -- We can set the config of materialized as 'TABLE'
 
+<<<<<<< HEAD
+-- After configuring on the 'YAML' file, we can remove the following config
+=======
 {{
     config(
         materialized = 'table'
     )
 }}
 
+>>>>>>> 9c4e1b08f702f55390406b4c1e68a8ac40764cec
 -- select *
 -- from dbt_trial.dbo_dbt.customer
 -- ORDER BY C_MKTSEGMENT
