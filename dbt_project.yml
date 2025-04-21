@@ -46,14 +46,8 @@ models:
   dbt_tutorial:
     ## applies the config to following models
     marts:
-<<<<<<< HEAD
       +materialized: table
     
     staging:
       +materialized: view
-=======
-      materialized: table
-    
-    staging:
-      materialized: view
->>>>>>> 9c4e1b08f702f55390406b4c1e68a8ac40764cec
+

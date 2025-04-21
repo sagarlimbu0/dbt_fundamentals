@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_orders
+    columns:
+      - name: o_custkey
+        tests:
+          - unique
+          - not_null
+
+  # second test for accepted values on CUSTOMER's segments
+  - name: stg_customers
+    columns:
+      - name: c_mktsegment
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values:
+                [
+                  "HOUSEHOLD",
+                  "BUILDING",
+                  "AUTOMOBILE",
+                  "MACHINERY",
+                  "FURNITURE",
+                ]
