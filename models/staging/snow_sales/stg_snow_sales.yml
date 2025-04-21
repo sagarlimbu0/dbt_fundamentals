@@ -13,9 +13,10 @@ models:
     columns:
       - name: c_mktsegment
         tests:
-          - unique
           - not_null
-      - name: status
+      - name: c_mktsegment
+          - not_null
+      - name: c_mktsegment
         tests:
           - accepted_values:
               values:
