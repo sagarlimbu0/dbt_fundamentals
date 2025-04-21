@@ -1,9 +1,6 @@
 -- By defaut, when running the model it creates a VIEW
 -- We can set the config of materialized as 'TABLE'
 
-
--- After configuring on the 'YAML' file, we can remove the following config
-
 -- select *
 -- from dbt_trial.dbo_dbt.customer
 -- ORDER BY C_MKTSEGMENT
