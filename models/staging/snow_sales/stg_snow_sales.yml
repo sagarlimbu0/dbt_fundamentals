@@ -8,11 +8,21 @@ models:
           - unique
           - not_null
 
-  # second test for accepted values on CUSTOMER's segments
+      - name: o_custkey ## Check relationship of foreign key wit ORDERS table
+        tests:
+          - relationships:
+              field: c_custkey
+              to: ref('stg_customers')
+
+  # check for not-null  values on CUSTOMER's segments
   - name: stg_customers
     columns:
       - name: c_mktsegment
         tests:
+          - not_null
+
+     
+      - name: c_mktsegment # Check only accepted value exists
           - not_null
       - name: c_mktsegment
           - not_null
