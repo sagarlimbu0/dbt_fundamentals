@@ -1,11 +1,6 @@
 -- By defaut, when running the model it creates a VIEW
 -- We can set the config of materialized as 'TABLE'
 
--- select *
--- from dbt_trial.dbo_dbt.customer
--- ORDER BY C_MKTSEGMENT
-
-
 -- Reference the existing model name
 with orders
 AS

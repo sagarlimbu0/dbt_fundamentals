@@ -3,6 +3,7 @@ version: 2
 
 sources:
   - name: snow_sales
+    description: Main Source of data incoming from snowflake
     database: dbt_trial
     schema: dbo_dbt
     freshness: ## on schema level to check the freshness
@@ -11,8 +12,14 @@ sources:
     loaded_at_field: _etl_loaded_date
     tables:
       - name: customers
+        description: customer data source incoming from in-built snowflake data
         freshness: null
       - name: orders
+        columns:
+          - name: o_orderkey
+            tests:
+              - unique
+              - not_null
         freshness: ## strict configurations
           warn_after: {count: 6, period: hour}
           error_after: {count: 24, period: hour}
