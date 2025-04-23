@@ -20,18 +20,10 @@ models:
       - name: c_mktsegment
         tests:
           - not_null
-<<<<<<< HEAD
-     
-      - name: c_mktsegment # Check only accepted value exists
-=======
-
      
       - name: c_mktsegment # Check only accepted value exists
           - not_null
       - name: c_mktsegment
-          - not_null
-      - name: c_mktsegment
->>>>>>> f9b69183d8dd5044daa90b3de5085dea12d73520
         tests:
           - accepted_values:
               values:
